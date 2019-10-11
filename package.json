@@ -1,0 +1,22 @@
+{
+  "name": "cms-2019",
+  "version": "0.0.1",
+  "description": "a CMS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobiasFranek/cms-2019-tfts.git"
+  },
+  "contributors": [
+    "Tobias Franek <tfranek.mmt-b2018@fh-salzburg.ac.at",
+    "Thomas Steiner <tsteiner.mmt-b2018@fh-salzburg.ac.at"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TobiasFranek/cms-2019-tfts/issues"
+  },
+  "homepage": "https://github.com/TobiasFranek/cms-2019-tfts#readme"
+}
