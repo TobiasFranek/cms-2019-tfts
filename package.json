@@ -8,8 +8,8 @@
     "start": "webpack-dev-server --config webpack.config.js --mode development",
     "build": "webpack --config webpack.config.js --mode production",
     "preview": "npm run build && http-server dist",
-    "parcel:serve": "node ./node_modules/parcel/bin/cli.js index.html --open",
-    "parcel:build": "node ./node_modules/parcel/bin/cli.js build index.html"
+    "parcel:serve": "node ./node_modules/parcel/bin/cli.js ./src/index.html --out-dir ./dist --open",
+    "parcel:build": "node ./node_modules/parcel/bin/cli.js build ./src/index.html --out-dir ./dist"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,9 @@
     "http-server": "^0.11.1",
     "image-webpack-loader": "^6.0.0",
     "node-sass": "^4.12.0",
+    "parcel-plugin-inject-svg": "^1.0.0",
+    "posthtml": "^0.12.0",
+    "posthtml-svg-inline": "^1.0.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.0",
