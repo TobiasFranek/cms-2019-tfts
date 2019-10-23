@@ -6,10 +6,34 @@
 }
 
 .main-navigation {
+    margin-right: $margin;
     &__list {
         @include list-unstyled();
         display: flex;
         margin: 0;
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            background: #fff;
+            z-index: -1;
+            padding-top: em(50);
+            opacity: 0;
+            transition: all 0.4s ease;
+            .main-navigation__list-item {
+                font-size: em(25);
+                margin-bottom: em(10);
+            }
+            &.open {
+                transform: translateX(0);
+                z-index: level(2);
+                opacity: 1;
+            }
+        }
     }
     &__list-item {
         &__link {
