@@ -1,0 +1,42 @@
+@mixin active-state {
+    color: $primaryColor;
+    &:after {
+        width: 100%;
+    }
+}
+
+.main-navigation {
+    &__list {
+        @include list-unstyled();
+        display: flex;
+        margin: 0;
+    }
+    &__list-item {
+        &__link {
+            margin: 0 em(10);
+            color: $defaultFontColor;
+            position: relative;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 2px;
+                background: $primaryColor;
+                transition: all 0.4s ease;
+                transform: translateX(-50%);
+                width: 0;
+                left: 50%;
+                bottom: em(-2);
+            }
+            &:hover, &:focus {
+                @include active-state();
+            }
+            &:focus {
+                border: none;
+            }
+            &--active {
+                @include active-state();
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.header {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    &__headline {
+        margin: 0;
+    }
+}

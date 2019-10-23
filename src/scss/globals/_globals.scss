@@ -1,3 +1,27 @@
-body {
-    background: #fff;
+* {
+    color: $defaultFontColor;
+}
+
+.h1 {
+    font-weight: 300;
+    font-size: em(35);
+    color: $primaryColor;
+}
+
+@mixin a-hover {
+    text-decoration: none;
+    color: $primaryColorDarker;
+}
+
+.a {
+    color: $primaryColor;
+    transition: all 0.4s ease;
+    &:hover {
+        @include a-hover;
+    }
+    &:focus {
+        @include a-hover;
+        border: 2px solid $primaryColor;
+        outline: none;
+    }
 }
