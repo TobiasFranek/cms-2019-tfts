@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: "./src/js/main.js",
@@ -23,8 +24,14 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
           // Creates `style` nodes from JS strings
-          'style-loader',
+
           // Translates CSS into CommonJS
           'css-loader',
           // Compiles Sass to CSS
@@ -53,6 +60,12 @@ module.exports = {
     }),
     new HtmlWebpackInlineSVGPlugin({
       runPreEmit: true,
+    }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
     })
   ]
 };
