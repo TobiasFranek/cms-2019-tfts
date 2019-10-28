@@ -11,8 +11,24 @@
     }
 }
 
+.h4 {
+    font-size: em(20);
+    margin: em(5) 0;
+}
+
+.h5 {
+    font-size: em(18);
+    margin: em(5) 0;
+}
+
 .content {
     @include max-width-container;
+}
+
+.p {
+    &--white {
+        color: #fff;
+    }
 }
 
 .h3 {
@@ -55,6 +71,7 @@
 .a {
     color: $primaryColor;
     transition: all 0.4s ease;
+    word-wrap: break-word;
     &:hover {
         @include a-hover;
     }
@@ -63,4 +80,20 @@
         border: 2px solid $primaryColor;
         outline: none;
     }
+    &--white {
+        color: #fff;
+        &:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+}
+
+.ul {
+    margin: 0;
+    padding-left: em(20);
+}
+
+.li {
+    padding-left: em(10);
 }

@@ -1,0 +1,24 @@
+.footer-navigation {
+    &__list {
+        @include list-unstyled();
+        display: flex;
+        @include media-breakpoint-down(sm) {
+            display: block;
+            text-align: center;
+        }
+    }
+    &__list-item {
+        &:not(:last-child):after {
+            content: '|';
+            color: #fff;
+            margin: 0 em(8) 0 em(4);
+            @include media-breakpoint-down(sm) {
+                content: '';
+                margin: 0;
+            }
+        }
+        &__link {
+            font-weight: 300;
+        }
+    }
+}
