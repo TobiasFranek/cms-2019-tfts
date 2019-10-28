@@ -6,6 +6,22 @@
     font-weight: 300;
     font-size: em(45);
     color: $primaryColor;
+    @include media-breakpoint-down(sm) {
+        font-size: em(30);
+    }
+}
+
+.content {
+    padding: 0 em(15);
+    max-width: 80em;
+    margin: 0 auto;
+}
+
+.h3 {
+    color: $primaryColor;
+    font-size: em(28);
+    margin: em(25) 0 em(15) 0;
+    font-weight: 300;
 }
 
 .btn {

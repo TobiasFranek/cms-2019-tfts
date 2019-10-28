@@ -5,11 +5,23 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    @include media-breakpoint-down(sm) {
+        height: em(300);
+    }
+    @include media-breakpoint-down(xs) {
+        height: em(350);
+
+    }
     &__wrapper {
         width: 50%;
         position: absolute;
         right: 0;
         top: 50px;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            text-align: center;
+            padding: 0 em(20);
+        }
     }
     &__headline {
         background: #fff;
