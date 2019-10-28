@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Alex Mayer</title>
   </head>
   <body>
     <header class="header">
@@ -45,42 +45,35 @@
     <main class="content">
         <section id="services" class="content__section">
             <h3 class="h3">Leistungen</h3>
-            <ul>
-                <li class="service-card service-card--yellow">
-                    <a href="#">
-                        <p class="service-card__headline">Design</p>
-                        <!-- WEBPACK <img inline src="src/img/home-lg-solid.svg"> -->
-
-                        <!-- <img inline src="img/home-lg-solid.svg"> -->
+            <ul class="cards__list">
+                <li class="cards__list__card cards__list__card--yellow">
+                    <a class="cards__list__card__link" href="#">
+                        <p class="cards__list__card__headline">Design</p>
+                        <img inline src="src/img/design.svg">
                     </a>
                 </li>
-                <li class="service-card service-card--blue">
-                    <a href="#">
-                        <p class="service-card__headline">Strategie</p>
-                        <svg></svg>
+                <li class="cards__list__card cards__list__card--blue">
+                    <a class="cards__list__card__link" href="#">
+                        <p class="cards__list__card__headline">Strategie</p>
+                        <img inline src="src/img/strategy.svg">
                     </a>
                 </li>
-                <li class="service-card service-card--blue">
-                    <a href="#">
-                        <p class="service-card__headline">Strategie</p>
-                        <svg></svg>
-                    </a>
-                </li>
-                <li class="service-card service-card--green">
-                    <a href="#">
-                        <p class="service-card__headline">Consulting</p>
-                        <svg></svg>
+                <li class="cards__list__card cards__list__card--green">
+                    <a class="cards__list__card__link" href="#">
+                        <p class="cards__list__card__headline">Consulting</p>
+                        <img inline src="src/img/consulting.svg">
                     </a>
                 </li>
             </ul>
         </section>
         <section id="news" class="content__section">
+			<h3 class="h3">News</h3>
             <ul class="news-list">
                 <li class="news-list__item">
-                    <a class="a">365 Postkarten</a> - Eine Liebeserklärung für jeden Tag! <a class="a" href="#">[mehr erfahren]</a>
+                    <a class="a" href="#">365 Postkarten</a> - Eine Liebeserklärung für jeden Tag! <a class="a" href="#">[mehr erfahren]</a>
                 </li>
                 <li class="news-list__item">
-                    <a class="a">Award-Nominierung</a> - Tolle News: ich bin bei der Endauswahl 2018! <a class="a" href="#">[mehr erfahren]</a>
+                    <a class="a" href="#">Award-Nominierung</a> - Tolle News: ich bin bei der Endauswahl 2018! <a class="a" href="#">[mehr erfahren]</a>
                 </li>
                 <li class="news-list__item">
                     <a class="a" href="#">CMYK erklärt</a> - der neuste <a class="a" href="#">Blog</a>-Eintrag! <a class="a" href="#">[mehr erfahren]</a>
@@ -88,45 +81,34 @@
             </ul>
         </section>
         <section id="credentials" class="content__section grid">
-            
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="footer__section">
-            <p class="p p--white">© Alex Mayer 2018</p>
-            <nav class="footer-navigation">
-                <ul class="footer-navigation__list">
-                    <li class="footer-navigation__list-item">
-                      <a class="footer-navigation__list-item__link" href="#">
-                        Impressum
-                      </a> | 
-                    </li>
-                    <li class="footer-navigation__list-item">
-                      <a class="footer-navigation__list-item__link" href="#">
-                        Datenschutzerklärung
-                      </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="footer__section">
-            <p class="p">Demo-Wordpress-Seite im Rahmen der LV‚Content Mangagement Systeme‘ an der FH Salzburg von Tobias Franek und Thomas Steiner</p>
-            <p class="p">Alle INhalte frei erfunden</p>
-        </div>
-        <blockquote id="picture-blockquote-2" class="p">
-          Große Webkunst – keine Kunst mit Alex Mayer!
-        </blockquote>
-        <p class="special-quotes">''</p>
-        <div id="picture-3"></div>
-        <div id="picture-description-3">
-          <p class="p">Vorstand Müller AG</p>
-          <p class="p">KR Ernst Anker, Dr. Florian Eisner</p>
-        </div>
-        <blockquote id="picture-blockquote-3" class="p">
-          Das Store-Konzept von Alex Mayer hat unsere größten Erwartungen
-          übertroffen.
-        </blockquote>
-      </section>
+			<h3 class="h3">Referenzen</h3>
+			<div id="picture-1"></div>
+			<div id="picture-description-1">
+				<p class="p">Tina Ubuntu</p>
+				<p class="p">CEO headless Ltd.</p>
+			</div>
+			<blockquote id="picture-blockquote-1" class="p">
+				Alex‘ Redesign hat maßgeblich mitgeholfen, unseren Umsatz um 20% in die Hohe zu trei- ben!
+			</blockquote>
+			<div id="picture-2"></div>
+			<div id="picture-description-2">
+				<p class="p">Tom Herzog</p>
+				<p class="p">Cutter's Finest</p>
+			</div>
+			<blockquote id="picture-blockquote-2" class="p">
+				Große Webkunst – keine Kunst mit Alex Mayer!
+			</blockquote>
+			<p class="special-quotes">''</p>
+			<div id="picture-3"></div>
+			<div id="picture-description-3">
+				<p class="p">Vorstand Müller AG</p>
+				<p class="p">KR Ernst Anker, Dr. Florian Eisner</p>
+			</div>
+			<blockquote id="picture-blockquote-3" class="p">
+				Das Store-Konzept von Alex Mayer hat unsere größten Erwartungen
+				übertroffen.
+			</blockquote>
+		</section>
     </main>
     <footer class="footer">
       <div class="footer__section">
