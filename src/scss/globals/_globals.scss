@@ -4,8 +4,33 @@
 
 .h1 {
     font-weight: 300;
-    font-size: em(35);
+    font-size: em(45);
     color: $primaryColor;
+}
+
+.btn {
+    font-weight: 300;
+    font-size: em(24);
+    color: #fff;
+    background: #333;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    transition: all 0.4s ease;
+    &__a {
+        color: #fff;
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    &--green {
+        background: $green;
+        &:hover {
+            background: darken($green, 10%);
+        }
+    }
 }
 
 @mixin a-hover {

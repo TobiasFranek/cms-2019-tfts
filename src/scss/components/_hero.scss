@@ -1,3 +1,20 @@
 .hero {
     flex-basis: 100%;
+    height: em(500);
+    background: url('./../img/illuminated-keyboard-1242287.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &__wrapper {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        top: 50px;
+    }
+    &__headline {
+        background: #fff;
+        display: inline;
+        padding: 5px;
+        line-height: 1.8;
+    }
 }
