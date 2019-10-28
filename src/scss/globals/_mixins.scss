@@ -1,4 +1,5 @@
 @mixin max-width-container {
     margin: 0 auto;
     max-width: 80em;
+    padding: 0 em(15);
 }
