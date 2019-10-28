@@ -77,8 +77,6 @@
     }
     &:focus {
         @include a-hover;
-        border: 2px solid $primaryColor;
-        outline: none;
     }
     &--white {
         color: #fff;
