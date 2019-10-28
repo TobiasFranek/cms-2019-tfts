@@ -19,6 +19,9 @@
         }
         &__link {
             font-weight: 300;
+            &:hover {
+                color: #fff;
+            }
         }
     }
 }
