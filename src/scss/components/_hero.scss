@@ -23,10 +23,16 @@
             padding: 0 em(20);
         }
     }
+
+    &__btn {
+        margin-left: -10px;
+    }
+
     &__headline {
         background: #fff;
         display: inline;
-        padding: 5px;
+        padding: 5px 0;
+        box-shadow: 10px 0 0 #fff, -10px 0 0 #fff;
         line-height: 1.8;
     }
 }
