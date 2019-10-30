@@ -1,18 +1,19 @@
 /* BOOTSTRAP REBOOT */
-@import '../../node_modules/bootstrap/scss/bootstrap-reboot';
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot";
 
 /* GLOBALS */
-@import './globals/variables';
-@import './globals/mixins';
-@import './globals/functions';
-@import './globals/globals';
+@import "./globals/variables";
+@import "./globals/mixins";
+@import "./globals/functions";
+@import "./globals/globals";
 
 /* COMPONENTS */
-@import './components/header';
-@import './components/navigation';
-@import './components/hero';
-@import './components/burger';
-@import './components/cards';
-@import './components/news-list';
-@import './components/footer';
-@import './components/footer-nav';
+@import "./components/header";
+@import "./components/navigation";
+@import "./components/hero";
+@import "./components/burger";
+@import "./components/cards";
+@import "./components/news-list";
+@import "./components/references";
+@import "./components/footer";
+@import "./components/footer-nav";
