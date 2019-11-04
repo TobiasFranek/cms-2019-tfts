@@ -31,8 +31,18 @@
     &__headline {
         background: #fff;
         display: inline;
-        padding: 5px 0;
+        padding: 2px 0;
         box-shadow: 10px 0 0 #fff, -10px 0 0 #fff;
-        line-height: 1.8;
+        line-height: 1.4;
+        font-weight: 300;
+        font-size: em(60);
+        color: $primaryColor;
+        -webkit-box-decoration-break: clone;
+        -o-box-decoration-break: clone;
+        box-decoration-break: clone;
+        @include media-breakpoint-down(sm) {
+          font-size: em(40);
+        }
+
     }
 }
