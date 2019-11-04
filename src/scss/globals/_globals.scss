@@ -29,6 +29,9 @@
 .p {
   margin: 0;
   font-size: em(20);
+  @media only screen and (max-width: 950px) {
+    font-size: em(16);
+}
   &--white {
     color: #fff;
   }
@@ -102,4 +105,7 @@
 .li {
   padding-left: em(10);
   font-size: em(20);
+  @media only screen and (max-width: 950px) {
+    font-size: em(16);
+}
 }

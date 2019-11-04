@@ -15,14 +15,18 @@
     &__wrapper {
         width: 50%;
         position: absolute;
-        right: 0;
-        top: 50px;
+        right: 15px;
+        top: 100px;
         @include media-breakpoint-down(sm) {
             width: 100%;
             text-align: center;
             padding: 0 em(20);
         }
+        @media only screen and (max-width: 950px) {
+            top:50px;
+        }
     }
+
 
     &__btn {
         margin-left: -10px;
