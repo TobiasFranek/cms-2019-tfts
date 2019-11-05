@@ -69,12 +69,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Alex Mayer',
       template: "./src/index.html",
       inject: true
     }),
     new HtmlWebpackPlugin({
+      title: 'Alex Mayer - About Me',
       filename: 'about-me.html',
-      template: "./src/about-me.html",
+      template: './src/about-me.html',
       inject: true
     }),
     new HtmlWebpackInlineSVGPlugin({

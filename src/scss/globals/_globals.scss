@@ -112,8 +112,12 @@
 
 .about-me{
   .hero{
-   background:url('./../img/working-desk.jpg');
-   background-position: center;
-   background-size: cover;
+    background-image: url('./../img/working-desk.jpg');
+  }
+}
+
+.home {
+  .hero {
+    background-image: url('./../img/illuminated-keyboard-1242287.jpg');
   }
 }
