@@ -8,7 +8,15 @@
 </head>
 
 <body class="home">
-  <%= require('./partials/_header.html') %>
+  <%= require('./partials/_header-top.html') %>
+    <h2 class="hero__headline">
+      Glänzende Ideen für leuchtende Augen
+    </h2>
+    <br />
+    <button class="hero__btn btn btn--green">
+        <a class="btn__a" href="#">Angebot einholen</a>
+    </button>
+  <%= require('./partials/_header-bottom.html') %>
   <main class="content">
     <section id="services" class="content__section">
       <h3 class="h3">Leistungen</h3>
