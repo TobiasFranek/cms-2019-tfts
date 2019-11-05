@@ -11,46 +11,7 @@
 </head>
 
 <body>
-  <header class="header">
-    <h1 class="h1 header__headline">
-      <a class="a header__headline__a" href="/">Alex Mayer</a>
-    </h1>
-    <nav class="main-navigation">
-      <button class="burger">
-        <span class="burger__bar burger__bar--1"></span>
-        <span class="burger__bar burger__bar--2"></span>
-        <span class="burger__bar burger__bar--3"></span>
-      </button>
-      <ul class="main-navigation__list">
-        <li class="main-navigation__list-item">
-          <a class="main-navigation__list-item__link a main-navigation__list-item__link--active" href="#">Start</a>
-        </li>
-        <li class="main-navigation__list-item">
-          <a class="main-navigation__list-item__link a" href="#">Leistungen</a>
-        </li>
-        <li class="main-navigation__list-item">
-          <a class="main-navigation__list-item__link a" href="#">Blog</a>
-        </li>
-        <li class="main-navigation__list-item">
-          <a class="main-navigation__list-item__link a" href="#">Über mich</a>
-        </li>
-        <li class="main-navigation__list-item">
-          <a class="main-navigation__list-item__link a" href="#">Kontakt</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="hero">
-      <div class="hero__wrapper">
-        <h2 class="hero__headline">
-          Glänzende Ideen für leuchtende Augen
-        </h2>
-        <br />
-        <button class="hero__btn btn btn--green">
-          <a class="btn__a" href="#">Angebot einholen</a>
-        </button>
-      </div>
-    </div>
-  </header>
+  <%= require('./partials/_header.html') %>
   <main class="content">
     <section id="services" class="content__section">
       <h3 class="h3">Leistungen</h3>
