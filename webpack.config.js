@@ -49,7 +49,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
+      },
+      {
+        test: /\.(gif|png|jpe?g)$/i,
         use: [
           'file-loader',
           {
