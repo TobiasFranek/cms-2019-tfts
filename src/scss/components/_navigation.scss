@@ -65,3 +65,15 @@
     }
   }
 }
+
+.about-me {
+  .main-navigation__list-item__link--about-me {
+    @include active-state();
+  }
+}
+
+.home {
+  .main-navigation__list-item__link--landing {
+    @include active-state();
+  }
+}
