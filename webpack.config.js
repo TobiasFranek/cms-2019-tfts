@@ -38,6 +38,16 @@ module.exports = {
           'sass-loader',
         ],
       },
+      { 
+        test: /\.(html)$/,
+        include: path.join(__dirname, 'src/partials'),
+        use: {
+          loader: 'html-loader',
+          options: {
+            interpolate: true
+          }
+        }
+      },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
