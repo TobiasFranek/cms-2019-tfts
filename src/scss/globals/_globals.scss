@@ -111,7 +111,9 @@
 }
 
 .about-me{
-  .hero__wrapper{
-  //  background:url()
+  .hero{
+   background:url('./../img/working-desk.jpg');
+   background-position: center;
+   background-size: cover;
   }
 }
