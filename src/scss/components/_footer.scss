@@ -1,6 +1,7 @@
 .footer {
     background: $primaryColor;
     width: 100%;
+    margin-top: em(40);
     &__wrapper {
         @include max-width-container;
         padding-top: em(20);
