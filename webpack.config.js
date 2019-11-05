@@ -38,7 +38,7 @@ module.exports = {
           'sass-loader',
         ],
       },
-      { 
+      {
         test: /\.(html)$/,
         include: path.join(__dirname, 'src/partials'),
         use: {
@@ -70,6 +70,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about-me.html',
+      template: "./src/about-me.html",
       inject: true
     }),
     new HtmlWebpackInlineSVGPlugin({
