@@ -2,12 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <%= require('./partials/_meta.html') %>
   <title>Alex Mayer</title>
-  <link href="https://fonts.googleapis.com/css?family=Slabo+13px&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon&display=swap" rel="stylesheet">
+  <%= require('./partials/_stylesheets.html') %>
 </head>
 
 <body>
@@ -27,7 +24,8 @@
     </section>
   </main>
   <%= require('./partials/_footer.html') %>
-  <script src="./js/main.js"></script>
+
+  <%= require('./partials/_javascripts.html') %>
 </body>
 
 </html>
