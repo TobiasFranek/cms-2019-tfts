@@ -1,0 +1,39 @@
+<?php
+    $BODY_CLASS = 'about';
+?>
+
+    <?php include './partials/_header.php' ?>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+    <h3 class="h3">Über mich</h3>
+        <p class="p">Mein Name ist Alex Mayer und ich bin Web-Entwickler und Designer. Ich habe mich auf das erstellen
+            von professionellen Websites mit modernem Design spezialisiert. Weiters lege ich viel wert auf moderne
+            Technologien und Techniken, sowie Accessability und Usability im Web.</p>
+
+        <h4 class="h4"> Wie ich dir helfen kann</h4>
+        <p class="p">Ich kann Dir helfen online präsent zu werden oder deinen online Auftritt zu verbessern. Aber warum
+            brauchst du das? Ganz einfach, wenn man online präsent ist können sich deine Kunden leicht über dich
+            informieren und sich ein von dir vorgegebenes Bild machen. Sie finden die wichtigsten Informationen auf
+            einen Click und müssen dich nicht wegen jeder Kleinigkeit anrufen. Weiters werden dich neue Kunden online
+            finden und von selbst auf dich zukommen.</p>
+
+        <h4 class="h4">Skills:</h4>
+        <ul class>
+            <li>
+                <p class="p">HTML</p>
+            </li>
+            <li>
+                <p class="p">CSS</p>
+            </li>
+            <li>
+                <p class="p">JavaScript</p>
+            </li>
+            <li>
+                <p class="p">Wordpress</p>
+            </li>
+        </ul>
+    </main>
+
+    <?php include './partials/_footer.php' ?>
