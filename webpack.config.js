@@ -1,92 +1,170 @@
-const path = require("path");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const glob = require('glob');
+const path = require('path');
+
+const themeName = 'alex';
+const pluginFolder = `public/wp-content/plugins`;
+const themeFolder  = `public/wp-content/themes/${themeName}`;
+const phpServerUrl = "http://alex.localhost";
 
 module.exports = {
-  entry: "./src/js/main.js",
+  entry: { main:'./src/js/main.js', admin: './src/scss/admin.scss' },
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, themeFolder),
   },
+
+  devServer: {
+    contentBase: './dist'
+  },
+
+  devtool: "none",
   module: {
     rules: [
+
+      // use babel for all js files
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-shorthand-properties']
           }
         }
       },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },
-          },
-          // Creates `style` nodes from JS strings
 
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
-      },
+      // convert SASS to CSS, then minify and autoprefix
       {
-        test: /\.(html)$/,
-        include: path.join(__dirname, 'src/partials'),
-        use: {
-          loader: 'html-loader',
-          options: {
-            interpolate: true
-          }
-        }
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader'
-      },
-      {
-        test: /\.(gif|png|jpe?g)$/i,
+        test: /\.(scss|css)$/,
         use: [
-          'file-loader',
+          MiniCssExtractPlugin.loader, // extract CSS into separate file
+          { loader: "css-loader", // translates CSS into CommonJS
+            options: {
+              sourceMap: true
+            }
+          },
+          { loader: "postcss-loader", // autoprefixes CSS
+            options: {
+              sourceMap: true
+            }
+          },
+          { loader: "sass-loader", // compiles Sass to CSS, using Node Sass by default
+            options: {
+              sourceMap: true,
+            }
+          },
+          { loader: "import-glob-loader" }
+        ]
+      },
+
+      // include fonts
+      {
+        test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
+      },
+
+      // include partials (must be located in `src/partials/`)
+      {
+        test: /\_.*\.html$/,
+        include: [path.resolve(__dirname, 'src/partials')],
+        use: [{
+          loader: 'html-loader',
+          options: { 
+            root: path.resolve(__dirname, 'src')
+          }
+        }]
+      },
+
+      // compress and include images
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          { loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/'
+            }
+          },
+
           {
             loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
-            },
-          },
-        ],
+          }
+        ]
       }
     ]
   },
+
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Alex Mayer',
-      template: "./src/index.html",
-      inject: true
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Alex Mayer - About Me',
-      filename: 'about-me.html',
-      template: './src/about-me.html',
-      inject: true
-    }),
-    new HtmlWebpackInlineSVGPlugin({
-      runPreEmit: true,
-    }),
+
+    // Sync webpage via proxy-server
+    new BrowserSyncPlugin(
+      {
+        proxy: phpServerUrl ,
+        open: false
+      },
+      {
+        // reload: false
+      }
+    ),
+    // clean dist folder before each build
+    new CleanWebpackPlugin(),
+
+    // extract css into file
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css',
+      filename: '[name].[contenthash].css'
+    }),
+
+    new CopyWebpackPlugin([
+      { from: 'src/favicons/*',
+        to: path.resolve(__dirname, 'public/'),
+        flatten: true
+      },
+      { from: 'src/style.css',
+        to: path.resolve(__dirname, themeFolder),
+        flatten: true
+      },
+      { from: 'src/screenshot.png',
+        to: path.resolve(__dirname, themeFolder),
+        flatten: true
+      },
+      { from: 'src/wordpress/wp-config.php',
+        to: path.resolve(__dirname, 'public/'),
+        flatten: true
+      },
+      { from: 'src/templates/*',
+        to: `${path.resolve(__dirname, themeFolder)}/templates`,
+        flatten: true,
+        copyUnmodified: true
+      },
+      { context: './src/php',
+        from: '**',
+        to: '',
+        typeTo: 'dir',
+        copyUnmodified: true
+      },
+    ]),
+
+    new HtmlWebpackPlugin({
+      template: 'src/php/functions.php',
+      filename: 'functions.php',
+      hash: true,
+      inject: false,
     })
-  ]
-};
+  ],
+
+  optimization: {
+    minimizer: [new TerserPlugin()]
+  }
+}
